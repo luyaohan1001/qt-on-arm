@@ -1,11 +1,17 @@
+/******************************************************************
+* @project		qt-arm-led-toggle
+* @brief        mainwindow.h
+* @author       Luyao Han
+* @email        luyaohan1001@gmail.com
+* @date         2022-04-05
+*******************************************************************/
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+#include <QPushButton>
+#include <QFile>
 
 class MainWindow : public QMainWindow
 {
@@ -16,6 +22,19 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
+    // point to a bush button
+    QPushButton *pushButton;
+
+    // file, used to point to sysfs file
+    QFile file;
+
+    // LED setter
+    void setLedState();
+
+    // LED getter
+    bool getLedState();
+
+private slots:
+    void pushButtonClicked();
 };
 #endif // MAINWINDOW_H

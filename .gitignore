@@ -1,2 +1,5 @@
 # compiled QT
 qt-everywhere-src-5.12.9/  
+qmake-source/
+opencv-source/
+

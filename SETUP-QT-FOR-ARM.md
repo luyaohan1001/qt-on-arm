@@ -297,7 +297,6 @@
 
 				$ tar -xvf arm-qt.tar.bz2
 
-
 				On imx6ull console, arm-qt should be there already.
 
 				$ cd arm-qt
