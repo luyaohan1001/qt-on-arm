@@ -18,10 +18,10 @@ Copyright © Deng Zhimao Co., Ltd. 1990-2021. All rights reserved.
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    /* 布局初始化 */
+    /* Initialize layout. */
     layoutInit();
 
-    /* 扫描摄像头 */
+    /* Scan for camera devices connected to the OS. */
     scanCameraDevice();
 }
 
@@ -31,10 +31,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::layoutInit()
 {
-    /* 获取屏幕的分辨率，Qt官方建议使用这
-     * 种方法获取屏幕分辨率，防上多屏设备导致对应不上
-     * 注意，这是获取整个桌面系统的分辨率
-     */
+    // Get the resolution of the entire desktop.
     QList <QScreen *> list_screen =  QGuiApplication::screens();
 
     /* 如果是ARM平台，直接设置大小为屏幕的大小 */
@@ -129,11 +126,11 @@ void MainWindow::scanCameraDevice()
     /* QFile文件指向/dev/video0 */
     QFile file("/dev/video0");
 
-    /* 如果文件存在 */
+    // if /dev/video0 exist
     if (file.exists())
         comboBox->addItem("video0");
     else {
-        displayLabel->setText("无摄像头设备");
+        displayLabel->setText("no camera device.");
         return;
     }
 
