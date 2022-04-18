@@ -26,7 +26,7 @@ public:
     ~Camera();
 
 signals:
-    /* 声明信号，用于传递有图片信号时显示图像 */
+    // signal to indicate that the image is ready.
     void readyImage(const QImage&);
 
 public slots:

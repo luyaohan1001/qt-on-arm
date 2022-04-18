@@ -1,5 +1,5 @@
 # Download opencv 3.4.1 source:
-		https://github.com/opencv/opencv/releases/tag/3.4.1
+		visit https://github.com/opencv/opencv/releases/tag/3.4.1
 
 		$ tar xf opencv-3.4.1.tar.gz
 
@@ -11,9 +11,12 @@
 
 
 		# cmake will look for stuff on the last level directory and make into 'build' folder
-		$ cmake..
+
+		$ cmake ..
 
 			Expect the following:
+
+        Generally a lot of 'Success', 'found', 'done'...etc
 
 				...... 
 				--   Matlab:                        NO
@@ -27,7 +30,7 @@
 
 		$ make -j 16
 	
-			Expect the following:
+			Expect the following, this process will take a while from 0% to 100%:
 				......
 				[ 97%] Building CXX object modules/imgproc/CMakeFiles/opencv_perf_imgproc.dir/perf/perf_phasecorr.cpp.o
 				[ 97%] Linking CXX executable ../../bin/opencv_test_features2d
